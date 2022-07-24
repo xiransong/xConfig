@@ -1,0 +1,16 @@
+results_root: ''
+
+model:
+  fead_forward_net:
+    arch: 
+      - 'torch.nn.Linear(64, 1024)'
+      - 'torch.nn.Tanh()'
+      - 'torch.nn.Linear(1024, 64)'
+    lr: 0.001
+  scale_net:
+    arch: 
+      - 'torch.nn.Linear(64, 32)'
+      - 'torch.nn.Tanh()'
+      - 'torch.nn.Linear(32, 1)'
+      - 'torch.nn.Sigmoid()'
+    lr: 0.0001
