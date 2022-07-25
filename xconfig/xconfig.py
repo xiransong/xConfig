@@ -2,7 +2,8 @@ import xconfig.utils as utils
 from xconfig.parse import parse_arg_str_list
 
 
-FIELD_SEP='|'
+FIELD_SEP = '|'
+ROOT_FIELD= 'root'
 
 
 def join(field_str1, field_str2):
@@ -32,8 +33,11 @@ class xConfig:
         return self.get(field_str)
     
     def get(self, field_str):
-        _d, key = self._get_last_dict_and_key(field_str)
-        return _d[key]
+        if field_str == ROOT_FIELD:
+            return self.d
+        else:
+            _d, key = self._get_last_dict_and_key(field_str)
+            return _d[key]
     
     def get_dict(self):
         return self.d
