@@ -19,6 +19,8 @@ def main():
     cmd_config = sys.argv[3:]
     config.parse(cmd_config)  # parse command line arguments (overwrite the same config in .yaml)
     
+    config.print()
+    
     results_root = config['results_root']
     config.save_yaml(osp.join(results_root, 'config.yaml'))  # save as config.yaml
     

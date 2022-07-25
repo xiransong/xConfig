@@ -38,6 +38,9 @@ class xConfig:
     def get_dict(self):
         return self.d
     
+    def print(self):
+        utils.print_dict(self.d)
+    
     def _get_last_dict_and_key(self, field_str):
         lis = field_str.split(FIELD_SEP)
         _d = self.d
