@@ -2,7 +2,7 @@ import sys
 PROJECT_ROOT = sys.argv[1]
 sys.path.append(PROJECT_ROOT)
 
-from xconfig import xconfig
+import xconfig
 from model import MyModel
 
 import torch
